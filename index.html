@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jinfeng Chen · 机器人学习与实验</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="#top" lang="en">Jinfeng Chen<span>.</span></a>
+  <nav aria-label="主导航">
+    <a href="#projects">项目</a><a href="#research">学术成果</a>
+    <a href="#blog">博客</a>
+  </nav>
+</header>
+<main id="top">
+  <section class="hero" aria-labelledby="name">
+    <div>
+      <p class="subject">机器人学习 / 具身智能</p>
+      <h1 id="name" lang="en">Jinfeng<br><i>Chen.</i></h1>
+      <div class="intro">
+        <p>我来自中国，目前就读于电子科技大学信息与通信工程学院。我的研究关注多传感器感知与机器人学习，从融合相机和激光雷达数据做三维检测，到在仿真和真实机械臂上评测操作策略。</p>
+        <p>我把实验复现的步骤和遇到的问题写进技术博客，也参与编写 Xbotics 具身智能手册。平时用 Python、Linux 和 Docker 做实验，也使用 Java 和 Bash。</p>
+      </div>
+      <a class="button" href="#projects">浏览项目 ↓</a>
+      <a class="profile" href="mailto:chenjinfeng50@gmail.com">chenjinfeng50@gmail.com</a>
+      <div class="profile-links" role="group" aria-label="个人主页与公开账号">
+        <a href="https://github.com/Jinfeng50">GitHub ↗</a>
+        <a href="https://gitee.com/sh-shqi">Gitee ↗</a>
+        <a href="https://notes.chenjinfeng.com/">博客 ↗</a>
+        <a href="https://scholar.google.com/citations?user=yyM7Y9EAAAAJ">Google Scholar ↗</a>
+        <a href="https://www.zhihu.com/people/yanzongs">知乎 ↗</a>
+        <a href="https://space.bilibili.com/38971010">哔哩哔哩 ↗</a>
+      </div>
+    </div>
+    <figure>
+      <video controls playsinline preload="none" poster="assets/so101.jpg" aria-label="SO-101 双臂操作成功案例" src="assets/so101.mp4"></video>
+      <figcaption><b>SO-101 双臂操作</b><span>真机实验录像</span></figcaption>
+    </figure>
+  </section>
+  <section id="projects">
+    <h2>精选项目</h2>
+    <article class="case">
+      <div><small>真机强化学习</small><h3>SO-101 Dual</h3>
+        <p>在双臂平台上适配 RL Token。从遥操作采集示范开始，用 π0.5 做监督微调，再接入真机在线强化学习。</p>
+        <p class="links"><a href="https://github.com/Jinfeng50/rlt_so101_dual">训练流程 ↗</a> · <a href="https://github.com/user-attachments/assets/4be130b2-9381-404e-81cc-ce5aa3d7d9ee">对照失败录像 ↗</a></p></div>
+      <figure class="strip"><div class="frames"><div><img src="assets/arm-06.jpg" alt="双臂操作第 6 秒"><time>00:06</time></div><div><img src="assets/arm-24.jpg" alt="双臂操作第 24 秒"><time>00:24</time></div><div><img src="assets/arm-42.jpg" alt="双臂操作第 42 秒"><time>00:42</time></div></div><figcaption>同一次成功操作中的三个时刻</figcaption></figure>
+    </article>
+    <article class="case">
+      <div><small>视觉语言动作模型评测</small><h3>π0.5 × LIBERO</h3>
+      <p>让机械臂按指令把木柜上的黑碗放到盘子上。项目录像展示一次成功操作，表中汇总四个任务集各 500 次试验的成功率。</p>
+      <p class="links"><a href="https://github.com/Jinfeng50/openpi-libero-reproduction/blob/main/docs/results.md">完整评测记录 ↗</a></p></div>
+      <div class="bench"><video controls playsinline preload="none" poster="assets/libero.jpg" src="assets/libero.mp4" aria-label="黑碗放置仿真录像"></video>
+      <table><caption>LIBERO 成功率</caption><thead><tr><th>任务集</th><th>官方权重</th><th>全量微调</th></tr></thead><tbody><tr><th>Spatial</th><td>98.2%</td><td>98.4%</td></tr><tr><th>Object</th><td>98.8%</td><td>98.4%</td></tr><tr><th>Goal</th><td>96.8%</td><td>96.8%</td></tr><tr><th>LIBERO-10</th><td>92.6%</td><td>91.8%</td></tr><tr><th>平均</th><td>96.60%</td><td>96.35%</td></tr></tbody></table></div>
+    </article>
+    <article class="case"><div><small>多机器人决策</small><h3>MotrixArena S2</h3>
+      <p>为 3 对 3 仿真足球赛编写团队策略。前锋追球推进，支援队员配合，守门员保护球门。决策端通过 ZeroMQ 将速度指令传给仿真器。</p>
+      <p class="links"><a href="https://github.com/Jinfeng50/MotrixArenaS2-soccer">决策代码与步态模型 ↗</a></p></div>
+      <figure class="field-wrap"><div class="field" role="img" aria-label="球场角色示意，从左至右为守门、支援和前锋"><span>守门</span><span>支援</span><span>前锋</span></div><figcaption>三人角色站位示意</figcaption></figure>
+    </article>
+    <article class="case" id="xbotics">
+      <div><small>社区共创 · 21 讲实践课程</small><h3>Xbotics 具身智能手册</h3>
+        <p>我与 Xbotics 社区一起编写具身智能教程，参与了第 3 讲「机器人本体与控制基础」和第 4 讲「传感器与感知基础」。这两讲串起了两个实操问题：机器人怎样执行策略给出的动作，又怎样在不同坐标系里理解传感器观测？</p>
+        <p class="links"><a href="https://github.com/Xbotics-Embodied-AI-club/Xbotics-Embodied-AI-Handbook/blob/HEAD/docs/part1-system-basics/03-robot-body-control.md">读第 3 讲 ↗</a> · <a href="https://github.com/Xbotics-Embodied-AI-club/Xbotics-Embodied-AI-Handbook/blob/HEAD/docs/part1-system-basics/04-sensors-coordinates.md">读第 4 讲 ↗</a> · <a href="https://github.com/Xbotics-Embodied-AI-club/Xbotics-Embodied-AI-Handbook">完整手册 ↗</a></p></div>
+      <figure><a href="assets/xbotics-lecture3.webp"><img class="lecture" src="assets/xbotics-lecture3.webp" alt="第 3 讲图 3-1，展示机器人动作的观测、策略与执行接口"></a><figcaption>Xbotics 手册 · 第 3 讲图 3-1</figcaption></figure>
+    </article>
+  </section>
+  <section id="research">
+    <div class="section-head"><h2>学术成果</h2><a href="https://scholar.google.com/citations?user=yyM7Y9EAAAAJ">Google Scholar ↗</a></div>
+    <article class="paper featured"><div><small>Findings of EMNLP · 2026</small><h3><a href="https://aclanthology.org/2026.findings-emnlp.1125/">AeroVerifier: A Typed Spatial Verifier for Frozen Vision-Language Models in Aerial Visual Question Answering ↗</a></h3>
+      <p><strong>Jinfeng Chen</strong>, Mengfan Yang, Jianyu Zhu, Zhicheng Zhou, Jing Liang</p>
+      <p>把航拍空间问题编译成带类型的程序，在物体级三维证据上执行，再把答案和逐阶段诊断反馈给视觉语言模型。</p></div>
+      <figure><a href="assets/aeroverifier-fig1.png"><img src="assets/aeroverifier-fig1.png" alt="AeroVerifier 主架构，从航拍问题到程序执行和反馈修正，点击查看原图"></a><figcaption><span>图 1 · AeroVerifier 主架构</span><a href="https://aclanthology.org/2026.findings-emnlp.1125.pdf#page=2">正文第 2 页 ↗</a></figcaption></figure>
+    </article>
+    <article class="paper featured">
+      <div><small>IEEE IGARSS · 2026</small><h3><a href="https://doi.org/10.1109/igarss60577.2026.11730526">RASAV: Reliability-Aware SAR-AIS Verification for Dark Ship Detection ↗</a></h3><p><strong>Jinfeng Chen</strong>, Zhicheng Zhou, Tianye Yu, Jing Liang</p>
+        <p>雷达图像里的海杂波可能被误判为船只。RASAV 为检测结果估计可靠性，再与船舶自动识别系统（AIS）记录核对，帮助审核人员优先检查可靠且没有匹配记录的候选。</p></div>
+      <figure><a href="assets/rasav-fig2.png"><img src="assets/rasav-fig2.png" alt="从雷达候选、可靠性校准到 AIS 核验"></a>
+        <figcaption>图 2 · RASAV 三层核验框架 · 正文第 2 页</figcaption></figure>
+    </article>
+    <article class="paper featured">
+      <div><small>Pattern Recognition · 2026</small><h3><a href="https://doi.org/10.1016/j.patcog.2026.113707">DGNNF: Dynamic Graph Neural Network Fusion for 3D object detection ↗</a></h3><p>Zhicheng Zhou, Tianye Yu, <strong>Jinfeng Chen</strong>, Jing Liang</p>
+        <p>DGNNF 从图像中的二维检测框划定激光点云的三维候选区域，再结合物体类别与几何信息为点分配权重。动态图网络利用这些点及其邻域关系估计三维检测框。</p></div>
+      <figure><a href="assets/dgnnf-fig1.png"><img src="assets/dgnnf-fig1.png" alt="图关系、特征融合与三维检测框"></a>
+        <figcaption>图 1 · DGNNF 图像与点云融合框架 · 作者稿第 8 页</figcaption></figure>
+    </article>
+    <article class="paper featured">
+      <div><small>International Conference on Artificial Intelligence and Smart Life · 2026</small><h3><a href="https://doi.org/10.1145/3848774.3848804">AW-PMBM: An Awareness-Driven PMBM Filter for Multi-Target Tracking in Intelligent Transportation ↗</a></h3><p>Tianye Yu, Zhicheng Zhou, <strong>Jinfeng Chen</strong>, Jing Liang</p>
+        <p>车辆被遮挡时，跟踪器容易丢失已有轨迹。AW-PMBM 利用预测运动轨迹保留目标假设，并按观测关联的歧义程度调整计算量。论文在 KITTI 城市交通序列上评估了轨迹连续性。</p></div>
+      <figure><a href="assets/aw-pmbm-fig1.png"><img src="assets/aw-pmbm-fig1.png" alt="AW-PMBM 的观测输入、运动感知轨迹起始、数据关联与滤波更新"></a>
+        <figcaption>图 1 · AW-PMBM 滤波框架 · 正文第 1 页</figcaption></figure>
+    </article>
+    <article class="paper featured" id="hgta">
+      <div><small>IEEE GLOBECOM · 2026 · 已录用</small>
+        <h3>HGTA: Hybrid Graph-Temporal Architecture for Trajectory Association in IoT Sensor Networks</h3>
+        <p>Zhicheng Zhou, Tianye Yu, <strong>Jinfeng Chen</strong>, Jing Liang</p>
+        <p>不同传感器的采样频率和测量偏差各异，同一物体可能留下形态不同的轨迹。HGTA 提取每段轨迹的短时动作和整体趋势，再通过跨传感器图注意力比较运动特征，估计两段轨迹来自同一物体的概率。</p></div>
+      <figure><a href="assets/hgta-fig1.png"><img src="assets/hgta-fig1.png" alt="HGTA 的多尺度时序编码、传感器来源编码、跨传感器图注意力及轨迹关联预测"></a>
+        <figcaption>图 1 · HGTA 跨传感器轨迹关联架构 · 正文第 2 页</figcaption></figure>
+    </article>
+  </section>
+  <section id="blog" aria-labelledby="blog-title">
+    <div class="section-head"><h2 id="blog-title">博客文章</h2><a href="https://notes.chenjinfeng.com/">进入博客 ↗</a></div>
+    <ul class="posts">
+      <li><a href="https://notes.chenjinfeng.com/notes/pi-series-technical-analysis.html">
+        <time datetime="2026-10-08">2026-10-08</time>
+        <div><h3>PI 系列技术解读</h3><p>梳理 Physical Intelligence 系列模型如何表示动作、利用记忆和从经验中学习，并追踪策略从训练到真机执行的过程。</p></div>
+        <span aria-hidden="true">↗</span>
+      </a></li>
+      <li><a href="https://notes.chenjinfeng.com/notes/reinforcement-learning-architectures.html">
+        <time datetime="2026-07-23">2026-07-23</time>
+        <div><h3>具身智能中的强化学习架构：从算法、训练系统到工程框架</h3><p>从策略网络和训练数据流讲到机器人部署，比较 skrl、rl_games 和 RSL-RL 各自适合的训练场景。</p></div>
+        <span aria-hidden="true">↗</span>
+      </a></li>
+      <li><a href="https://notes.chenjinfeng.com/notes/pi05-libero-baseline.html">
+        <time datetime="2026-06-10">2026-06-10</time>
+        <div><h3>π0.5 LIBERO 评测复现</h3><p>记录在共享 A800 集群上复现官方权重的命令、评测协议与常见问题。四组任务共运行 2,000 次，平均成功率为 96.60%。</p></div>
+        <span aria-hidden="true">↗</span>
+      </a></li>
+    </ul>
+  </section>
+</main>
+<footer><span>Jinfeng Chen</span><a href="https://notes.chenjinfeng.com/">阅读我的技术博客 ↗</a></footer>
+</body>
+</html>

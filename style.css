@@ -10,11 +10,11 @@ nav { gap: clamp(12px, 3vw, 38px); font-size: .92rem; }
 .brand, h1, h3 { font-family: "Instrument Serif", Georgia, serif; }
 .brand { font-size: 1.5rem; font-weight: 700; }
 .brand span, h1 i { color: var(--blue); }
-.hero { display: grid; grid-template-columns: .85fr 1.15fr; align-items: center; gap: 7%; padding: clamp(38px, 6vw, 88px) 0; }
+.hero { padding: clamp(38px, 6vw, 88px) 0; }
 .subject, small { color: var(--blue); font-size: .78rem; letter-spacing: .08em; font-weight: 650; }
 h1 { font-size: clamp(4rem, 7.8vw, 7rem); line-height: .86; font-weight: 500; letter-spacing: -.055em; margin: 24px 0; }
 .intro, article p, .research p { color: var(--muted); }
-.intro { max-width: 29em; margin-bottom: 26px; }
+.intro { max-width: 42em; margin-bottom: 26px; }
 .button { display: inline-block; padding: 9px 18px; background: var(--blue); color: white; border-radius: 4px; }
 .button:hover { color: white; background: #183894; }
 .profile { display: inline-block; margin: 6px 0 6px 12px; font-size: .9rem; }
@@ -33,9 +33,7 @@ article p, .research p { margin: 0; }
 footer { border-top: 1px solid var(--line); font-size: .85rem; padding: 20px 0 30px; }
 footer a { color: var(--blue); }
 @media (max-width: 700px) {
-  .hero, .grid { grid-template-columns: 1fr; gap: 26px; }
-  h1 br { display: none; }
-  h1 i::before { content: " "; }
+  .grid { grid-template-columns: 1fr; gap: 26px; }
   article + article { border-left: 0; padding: 20px 0 0; border-top: 1px solid var(--line); }
   .brand { font-size: 1.2rem; }
   .research { align-items: flex-start; flex-direction: column; }
